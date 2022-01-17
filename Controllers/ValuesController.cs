@@ -68,10 +68,10 @@ namespace Proiect_DAW.Controllers
         {
             return genuri.Where(s => s.IdGen == id);
         }
-    
-    
-        [HttpPost]
-         public IEnumerable<Utilizator> AddFromBodyUtilizator([FromBody] Utilizator obUtil)
+
+
+        [HttpPost("FromBody")]
+        public IEnumerable<Utilizator> AddFromBodyUtilizator([FromBody] Utilizator obUtil)
         {
             utilizatori.Add(obUtil);
             return utilizatori;
@@ -101,14 +101,54 @@ namespace Proiect_DAW.Controllers
             return genuri;
         }
 
+        [HttpPut]
+
+        public async Task<IActionResult> UpdateUtil([FromBody] Utilizator obUtil)
+        {
+            var UtilIndex = utilizatori.FindIndex((Utilizator _utilizator) => _utilizator.Id.Equals(obUtil.Id));
+            utilizatori[UtilIndex] = obUtil;
+
+            return Ok(utilizatori);
+        }
+
+        public async Task<IActionResult> UpdateLocatie([FromBody] Locatie obLoc)
+        {
+            var LocIndex = locatie.FindIndex((Locatie _locatie) => _locatie.IdLoc.Equals(obLoc.IdLoc));
+            locatie[LocIndex] = obLoc;
+
+            return Ok(locatie);
+        }
+
+        public async Task<IActionResult> UpdateCarti([FromBody] Carti obCarte)
+        {
+            var CarteIndex = carti.FindIndex((Carti _carte) => _carte.IdCarte.Equals(obCarte.IdCarte));
+            carti[CarteIndex] = obCarte;
+
+            return Ok(carti);
+        }
+
+        public async Task<IActionResult> UpdateAutori([FromBody] Autori obAu)
+        {
+            var AutorIndex = autori.FindIndex((Autori _autor) => _autor.IdAutor.Equals(obAu.IdAutor));
+            autori[AutorIndex] = obAu;
+
+            return Ok(autori);
+        }
+
+        public async Task<IActionResult> UpdateGen([FromBody] Gen obGen)
+        {
+            var GenIndex = genuri.FindIndex((Gen _gen) => _gen.IdGen.Equals(obGen.IdGen));
+            genuri[GenIndex] = obGen;
+
+            return Ok(genuri);
+        }
+
+
+
 
 
 
 
     }
-
-
-
-
 
 }
