@@ -144,7 +144,61 @@ namespace Proiect_DAW.Controllers
         }
 
 
+        /*
+        [HttpPatch("{id}")]
+        public IActionResult Patch ([FromRoute] int id, [FromBody] JsonPatchDocument<Utilizator> obUtil)
+        {
+            if(obUtil != null)
+            {
+                var utilToUpdate = utilizatori.FirstOrDefault(_util => _util.Id.Equals(id));
+                obUtil.ApplyTo(utilToUpdate, ModelState);
 
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+                return Ok(utilizatori);
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+        }
+
+        */
+
+        [HttpDelete]
+
+        public IActionResult DeleteUtil (Utilizator obUtil)
+        {
+            utilizatori.Remove(obUtil);
+            return Ok(utilizatori);
+        }
+
+        public IActionResult DeleteLoactie(Locatie obLoc)
+        {
+            locatie.Remove(obLoc);
+            return Ok(locatie);
+        }
+
+        public IActionResult DeleteCarti(Carti obCarte)
+        {
+            carti.Remove(obCarte);
+            return Ok(carti);
+        }
+
+        public IActionResult DeleteAutori(Autori obAu)
+        {
+            autori.Remove(obAu);
+            return Ok(autori);
+        }
+
+        public IActionResult DeleteGen(Gen obGen)
+        {
+            genuri.Remove(obGen);
+            return Ok(genuri);
+        }
 
 
 
