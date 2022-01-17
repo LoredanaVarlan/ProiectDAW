@@ -10,5 +10,6 @@ namespace Proiect_DAW
         public int IdGen { get; set; }
         public String Denumire { get { return Denumire; } set { Denumire = value; } }
         
+        public virtual ICollection<Carti> Carti { get; set; }
     }
 }

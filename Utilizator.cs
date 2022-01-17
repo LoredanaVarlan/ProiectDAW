@@ -17,6 +17,10 @@ namespace Proiect_DAW
 
         public virtual Locatie Locatie { get; set; }
 
+        public virtual Carti Carte { get; set; }
+
+        public virtual ICollection<Carti> CartiCitite { get; set; }
+
         }
 
 
