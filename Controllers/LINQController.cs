@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Collections;
+using System.Data.Entity;
+using Polly;
 
 namespace Proiect_DAW.Controllers
 {
@@ -13,6 +16,7 @@ namespace Proiect_DAW.Controllers
     {
         public static List<Carti> carti = new List<Carti>();
         public static List<Gen> genuri = new List<Gen>();
+        public static List<Autori> autori = new List<Autori>();
 
         public static void Main()
         {
@@ -32,7 +36,26 @@ namespace Proiect_DAW.Controllers
                 c.Gen.IdGen
             });
             joined.ToList().ForEach(x => Console.WriteLine($"Cartea cu titlul {x.Titlu} face partea din categoria de carti {x.IdGen}"));
+
+
+            /////////////////////////////////////////////////////////////where
+            var CartiGenId1 = carti.Where(x => x.Gen.IdGen == 1);
+        
+        
+            //////////////////////////////////////////////////////////////include
+            /*using (var context = new EntityContext())
+            {
+                var CartiAutoriNecunoscuti = context.autori.ToList
+                    .Where(a => a.IdAutor == null)
+                    .Include(a => a.Carti)
+                    .toList();
+
+            }*/
+            
+
         }
+
+
 
         
     }
