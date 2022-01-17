@@ -76,11 +76,35 @@ namespace Proiect_DAW.Controllers
             utilizatori.Add(obUtil);
             return utilizatori;
         }
-    
-    
-    
-    
-    
+
+        public IEnumerable<Locatie> AddFromBodyLocatie([FromBody] Locatie obLocatie)
+        {
+            locatie.Add(obLocatie);
+            return locatie;
+        }
+
+        public IEnumerable<Carti> AddFromBodyCarti([FromBody] Carti obCarte)
+        {
+            carti.Add(obCarte);
+            return carti;
+        }
+
+        public IEnumerable<Autori> AddFromBodyAutori([FromBody] Autori obAutor)
+        {
+            autori.Add(obAutor);
+            return autori;
+        }
+
+        public IEnumerable<Gen> AddFromBodyGen([FromBody] Gen obGen)
+        {
+            genuri.Add(obGen);
+            return genuri;
+        }
+
+
+
+
+
     }
 
 
