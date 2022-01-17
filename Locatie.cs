@@ -11,5 +11,9 @@ namespace Proiect_DAW
         public String Tara { get { return Tara; } set { Tara = value; } }
         public String Oras { get { return Oras; } set { Oras = value; } }
         public String Limba { get { return Limba; } set { Limba = value; } }
+
+        public virtual Utilizator Utilizator { get; set; }
+
     }
+
 }

@@ -15,6 +15,7 @@ namespace Proiect_DAW
         public String Email { get { return Email; } set { Email = value; } }
         public String Sex { get { return Sex; } set { Sex = value; } }
 
+        public virtual Locatie Locatie { get; set; }
 
         }
 

@@ -14,6 +14,8 @@ namespace Proiect_DAW
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +24,9 @@ namespace Proiect_DAW
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+       
     }
+
+
 }
