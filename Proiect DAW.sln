@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proiect DAW", "Proiect DAW.csproj", "{024CF3AE-0772-4218-BFC3-5AA726EF0ADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proiect DAW", "Proiect DAW.csproj", "{024CF3AE-0772-4218-BFC3-5AA726EF0ADB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
