@@ -12,7 +12,7 @@ namespace Proiect_DAW.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LINQController : ControllerBase
+    public class LINQController : Controller
     {
         public static List<Carti> carti = new List<Carti>();
         public static List<Gen> genuri = new List<Gen>();
@@ -43,14 +43,14 @@ namespace Proiect_DAW.Controllers
         
         
             //////////////////////////////////////////////////////////////include
-            /*using (var context = new EntityContext())
+            using (var context = new BookReviewContext())
             {
-                var CartiAutoriNecunoscuti = context.autori.ToList
+                var CartiAutoriNecunoscuti = context.autor
                     .Where(a => a.IdAutor == null)
-                    .Include(a => a.Carti)
-                    .toList();
+                    .Include(a => a.CartiScrise)
+                    .ToList();
 
-            }*/
+            }
             
 
         }
